@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>COVID-19 @Brian_Hey</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <center><h1>Hecho por @Brian_Hey</h1></center>
+
+    <section>
+      <h1>Resultados actualizados del COVID-19</h1>
+      <h2>Casos confirmados: <span id="casos"></span></h2>
+      <h2>Fallecidos: <span id="fallecidos"></span></h2>
+      <h2>RECUPERADOS: <span id="recuperados"></span></h2>
+    </section>
+
+    <section>
+      <h3>Seleccione el país</h3>
+      <select onchange="Show()" id="paises"></select>
+    </section>
+
+    <div id="Stats"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+
+  body{
+    background: orange;
+    color: white;
+  }
+
+  h1:hover{
+    color: gray
+  }
+
+  html{
+    overflow-x: hidden;
+  }
+</style>
