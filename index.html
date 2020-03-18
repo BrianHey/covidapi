@@ -1,55 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
+    <link href="https://fonts.googleapis.com/css?family=Anton|Ubuntu&display=swap" rel="stylesheet">    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>COVID-19 @Brian_Hey</title>
+    <title>COVID 19 @Brian_HEY</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" />
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
+    <!-- Bootstrap core CSS -->
     <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css"
       rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-      crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
+
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.14.0/css/mdb.min.css" rel="stylesheet" />
   </head>
+
   <body>
-    <center><h1>Hecho por @Brian_Hey</h1></center>
+    <br />
+    <center>
+      <h1>COVID 19</h1>
+    </center>
 
     <section>
-      <h1>Resultados actualizados del COVID-19</h1>
-      <h2>Casos confirmados: <span id="casos"></span></h2>
-      <h2>Fallecidos: <span id="fallecidos"></span></h2>
-      <h2>RECUPERADOS: <span id="recuperados"></span></h2>
-    </section>
+      <h4>RESULTADOS ACTUALIZADOS</h4>
+      <h4>
+        PAIS:
+        <span id="elPais" style="background: white; color:black; border-radius: 20px; padding: 1px 20px;"> Todos</span>
+      </h4>
 
+      <div class="row" style="background: rgba(0, 0, 0, 0.5);">
+        <div class="row container m-auto p-2">
+          <div class="col-12 col-md-6">
+            <div id="chartContainer" style="height: 300px; width: 100%; margin:auto"></div>
+          </div>
+          <div class="col-12 col-sm-6 d-flex justify-content-center align-items-center">
+            <ul>
+              <h3>
+                <li class="text-warning">CASOS CONFIRMADOS: <span id="casos"></span></li>
+              </h3>
+              <h3>
+                <li class="text-danger">FALLECIDOS: <span id="fallecidos"></span></li>
+              </h3>
+              <h3>
+                <li class="text-success">RECUPERADOS: <span id="recuperados"></span></li>
+              </h3>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
     <section>
-      <h3>Seleccione el país</h3>
-      <select onchange="Show()" id="paises"></select>
+      <div class="ui-widget">
+        <p>Estos datos son actualizados periódicamente</p>
+        <label for="tags">Busqueda por país: </label>
+        <input class="form-control w-25 m-auto" id="tags" onkeyup="Show()" />
+        <button class="btn btn-light btn-sm" onclick="Show()">Buscar</button>
+      </div>
     </section>
 
-    <div id="Stats"></div>
+    <section id="info">
+      <h5>Front-end Desarrollado por <a href="https://www.instagram.com/brian_hey/">@Brian_HEY</a></h5>
+      <h6>Diseñado por <a href="https://www.instagram.com/yeserproducciones/">@YeserProducciones</a></h6>
+      <p><a href="https://wuhan-coronavirus-api.laeyoung.endpoint.ainize.ai/jhu-edu/brief">API</a></p>
+    </section>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
+    <!-- Bootstrap tooltips -->
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"
+    ></script>
+    <!-- Bootstrap core JavaScript -->
+
+    <!-- MDB core JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.js"
+      integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.14.0/js/mdb.min.js"
+    ></script>
+    <script src="http://momentjs.com/downloads/moment.min.js"></script>
+
     <script src="index.js"></script>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        text-align: center;
+      }
+
+      .canvasjs-chart-credit {
+        display: none;
+      }
+
+      body {
+        background: url(background-min.jpg);
+        background-position: bottom;
+        background-size: cover;
+        color: white;
+        font-family: 'Anton', sans-serif;
+        min-height: 100%;
+      }
+
+      h1:hover {
+        color: gray;
+      }
+
+      html {
+        overflow-x: hidden;
+      }
+
+      .ui-widget {
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+
+      ul li {
+        text-align: left !important;
+      }
+
+      @media only screen and (max-width: 768px) {
+        .col-12 {
+          margin: auto;
+          padding: 1px;
+        }
+      }
+
+      input {
+        text-transform: uppercase;
+      }
+
+      a{
+        color:#ffaa00
+      }
+      a:hover{
+        color:#ffaa00
+      }
+
+      #info{
+        font-family: 'Ubuntu', sans-serif;
+      }
+    </style>
   </body>
 </html>
-
-<style>
-  * {
-    margin: 0;
-    padding: 0;
-    text-align: center;
-  }
-
-  body{
-    background: orange;
-    color: white;
-  }
-
-  h1:hover{
-    color: gray
-  }
-
-  html{
-    overflow-x: hidden;
-  }
-</style>
