@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <link href="https://fonts.googleapis.com/css?family=Anton|Ubuntu&display=swap" rel="stylesheet">    <meta charset="UTF-8" />
+    <link href="https://fonts.googleapis.com/css?family=Anton|Ubuntu&display=swap" rel="stylesheet" />
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>COVID 19 @Brian_HEY</title>
     <!-- Font Awesome -->
@@ -17,37 +18,49 @@
 
     <!-- Material Design Bootstrap -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.14.0/css/mdb.min.css" rel="stylesheet" />
+    <!-- Css propio -->
+    <link rel="stylesheet" href="estilos.css">
   </head>
 
   <body>
-    <br />
-    <center>
-      <h1>COVID 19</h1>
-    </center>
+
+  
+      <h2 id="tituloPrincipal"" >COVID 19</h2>
 
     <section>
-      <h4>RESULTADOS ACTUALIZADOS</h4>
-      <h4>
+      <h2>CASOS DE CORONAVIRUS A NIVEL MUNDIAL</h2>
+      <h5>RESULTADOS ACTUALIZADOS</h5>
+      <h6 id="fecha"></h6>
+      <h5>
         PAIS:
-        <span id="elPais" style="background: white; color:black; border-radius: 20px; padding: 1px 20px;"> Todos</span>
-      </h4>
+        <span id="elPais" > Todos</span>
+      </h5>
 
-      <div class="row" style="background: rgba(0, 0, 0, 0.5);">
+      <div class="row datos">
         <div class="row container m-auto p-2">
           <div class="col-12 col-md-6">
-            <div id="chartContainer" style="height: 300px; width: 100%; margin:auto"></div>
+            <div id="chartContainer"></div>
           </div>
-          <div class="col-12 col-sm-6 d-flex justify-content-center align-items-center">
+          <div class="datos col-12 col-sm-6 d-flex justify-content-center align-items-center">
             <ul>
               <h3>
-                <li class="text-warning">CASOS CONFIRMADOS: <span id="casos"></span></li>
+                <li class="text-warning">
+                  <img src="virus.svg" alt="" />
+                  CASOS CONFIRMADOS: <span id="casos"></span>
+                </li>
               </h3>
-              <h3>
-                <li class="text-danger">FALLECIDOS: <span id="fallecidos"></span></li>
-              </h3>
-              <h3>
-                <li class="text-success">RECUPERADOS: <span id="recuperados"></span></li>
-              </h3>
+              <h5>
+                <li class="text-success">
+                  <img src="weight-lifter.svg" alt="" />
+                  RECUPERADOS: <span id="recuperados"></span>
+                </li>
+              </h5>
+              <h5>
+                <li class="text-danger">
+                  <img src="skull-crossbones.svg" alt="" />
+                  FALLECIDOS: <span id="fallecidos"></span>
+                </li>
+              </h5>
             </ul>
           </div>
         </div>
@@ -63,7 +76,7 @@
     </section>
 
     <section id="info">
-      <h5>Front-end Desarrollado por <a href="https://www.instagram.com/brian_hey/">@Brian_HEY</a></h5>
+      <h6>Front-end Desarrollado por <a href="https://www.instagram.com/brian_hey/">@Brian_HEY</a></h6>
       <h6>Diseñado por <a href="https://www.instagram.com/yeserproducciones/">@YeserProducciones</a></h6>
       <p><a href="https://wuhan-coronavirus-api.laeyoung.endpoint.ainize.ai/jhu-edu/brief">API</a></p>
     </section>
@@ -86,72 +99,13 @@
       crossorigin="anonymous"
     ></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script
+    <!-- <script
       type="text/javascript"
       src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.14.0/js/mdb.min.js"
-    ></script>
+    ></script> -->
     <script src="http://momentjs.com/downloads/moment.min.js"></script>
 
     <script src="index.js"></script>
 
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        text-align: center;
-      }
-
-      .canvasjs-chart-credit {
-        display: none;
-      }
-
-      body {
-        background: url(background-min.jpg);
-        background-position: bottom;
-        background-size: cover;
-        color: white;
-        font-family: 'Anton', sans-serif;
-        min-height: 100%;
-      }
-
-      h1:hover {
-        color: gray;
-      }
-
-      html {
-        overflow-x: hidden;
-      }
-
-      .ui-widget {
-        margin-top: 20px;
-        margin-bottom: 20px;
-      }
-
-      ul li {
-        text-align: left !important;
-      }
-
-      @media only screen and (max-width: 768px) {
-        .col-12 {
-          margin: auto;
-          padding: 1px;
-        }
-      }
-
-      input {
-        text-transform: uppercase;
-      }
-
-      a{
-        color:#ffaa00
-      }
-      a:hover{
-        color:#ffaa00
-      }
-
-      #info{
-        font-family: 'Ubuntu', sans-serif;
-      }
-    </style>
   </body>
 </html>

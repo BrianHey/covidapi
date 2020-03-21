@@ -1,0 +1,119 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+#tituloPrincipal {
+  color: #f7e935;
+  text-align: center;
+  margin-top: 20px;
+}
+
+#elPais {
+  background: white;
+  color: black;
+  border-radius: 20px;
+  padding: 1px 20px;
+}
+
+.datos {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+#chartContainer {
+  height: 300px;
+  width: 100%;
+  margin: auto;
+}
+
+.canvasjs-chart-credit {
+  display: none;
+}
+
+body {
+  background: url(background-min.jpg);
+  background-position: bottom;
+  background-size: cover;
+  color: white;
+  font-family: 'Anton', sans-serif;
+  min-height: 100%;
+}
+
+h1:hover {
+  color: gray;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+.ui-widget {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+ul li {
+  text-align: left !important;
+}
+
+@media only screen and (max-width: 768px) {
+  .col-12 {
+    margin: auto;
+    padding: 1px;
+  }
+  .datos ul h4 li {
+    margin-top: 10px;
+    width: 100%;
+  }
+}
+
+li {
+  display: flex;
+  align-items: center;
+  vertical-align: center;
+}
+
+@media only screen and (max-width: 480px) {
+  .canvasjs-chart-canvas {
+    width: 80% !important;
+    height: 240px !important;
+    margin: auto !important;
+  }
+  .canvasjs-chart-container {
+    display: flex !important;
+    justify-content: center !important;
+  }
+}
+input {
+  text-transform: uppercase;
+}
+
+a {
+  color: rgba(255, 241, 51, 0.815);
+}
+a:hover {
+  color: #fb3;
+}
+
+#info {
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.datos h4 {
+  line-height: 50px;
+  font-weight: normal;
+}
+
+img {
+  width: 30px;
+  margin-right: 5px;
+}
+
+.datos span {
+  color: white;
+  margin-left: 5px;
+}
+
+.ui-menu-item div{
+  width: 100%; 
+}
